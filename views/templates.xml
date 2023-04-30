@@ -24,12 +24,12 @@
             </div>
           </div>
         </div> -->
-        <div style="box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);" class="card gap-1">
+        <div style="box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);" class="card gap-1 text-center">
               <div class="card-body bg-primary">
                 <div class="card-body">
                   <!-- <a href="/my/admission/online/applications/student" class="card-link">Student -->
                   <!-- Dashboard</a> -->
-                  <li><a href="/partner">Profile</a></li>
+                  <li><a href="/partner" class="card-link" >Profile</a></li>
                 </div>
               </div>
             </div>
