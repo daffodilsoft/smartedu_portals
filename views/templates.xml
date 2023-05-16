@@ -382,7 +382,7 @@
                         <div class="col my-1 mb-3">
                           <label>Student
                             ID</label>
-                          <input name="student_id_text" t-att-value="student_info.student_id_text" id="student_id_text" type="text" class="form-control" placeholder="Type your Student ID"/>
+                          <input name="student_id_string" t-att-value="student_info.student_id_string" id="student_id_string" type="text" class="form-control" placeholder="Type your Student ID"/>
                         </div>
                       </div>
                       <div class="row my-1">

@@ -23,7 +23,7 @@ class MyPortalController(http.Controller):
     @http.route('/my/admission/online/applications/student', type='http', auth='user', website=True)
     def my_student_route(self, **kw):
         user = request.env.user
-        information = http.request.env['se.student'].search(
+        information = http.request.env['se.student'].sudo().search(
             [('user_id', '=', user.id)], limit=1)
         return request.render("smartedu_portals.se_student_template", {
             'info': information,
@@ -32,7 +32,7 @@ class MyPortalController(http.Controller):
     @http.route('/my/admission/online/applications/list', type='http', auth='user', website=True)
     def my_student_admission_route(self, **kw):
         user = request.env.user
-        applicant_info = http.request.env['se.application'].search(
+        applicant_info = http.request.env['se.application'].sudo().search(
             [('user_id', '=', user.id)], limit=1)
         return request.render("smartedu_portals.se_student_application_list", {
             'informations': applicant_info,
@@ -106,7 +106,7 @@ class MyPortalController(http.Controller):
         student_info.first_name = kw["first_name"]
         student_info.middle_name = kw["middle_name"]
         student_info.last_name = kw["last_name"]
-        student_info.student_id_text = kw["student_id_text"]
+        student_info.student_id_string = kw["student_id_string"]
 
         # Update the many-to-one field (batch_id)
         batch_id = int(kw.get('batch_id', False))
