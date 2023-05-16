@@ -47,7 +47,7 @@
                 <div class="card-header fw-5 text-white">Personal Infromation</div>
                 <div class="my-2 card-body">
                   <div>
-                    <div class="text-center"><!-- /smartedu_portal/static/src/img/pic1.png -->
+                    <div class="text-center"><!-- /smartedu_portals/static/src/img/pic1.png -->
                       <img t-attf-src="data:image/png;base64,{{info.stu_image}}" alt="avatar" style="height: 120px;" class="img-thumbnail"></img>
                     </div>
                   </div>
@@ -249,8 +249,8 @@
     </template><!-- Admission Form TEmplate -->
     <template id="se_student_admission_template" name="My Student Admission Template">
       <t t-call="portal.portal_layout">
-        <link href="/smartedu_portal/static/src/css/custom.css" rel="stylesheet" type="text/css"/>
-        <script src="/smartedu_portal/static/src/js/custom.js" type="text/javascript"></script>
+        <link href="/smartedu_portals/static/src/css/custom.css" rel="stylesheet" type="text/css"/>
+        <script src="/smartedu_portals/static/src/js/custom.js" type="text/javascript"></script>
         <div>
           <body>
             <div id="topp"></div>
@@ -1539,9 +1539,9 @@
       <field name="url">/applicant-thank-you</field>
       <field name="website_published">True</field>
       <field name="key">
-        smartedu_portal.applicant_thanks</field>
+        smartedu_portals.applicant_thanks</field>
       <field name="arch" type="xml">
-        <t name="Thanks" t-name="smartedu_portal.applicant_thanks">
+        <t name="Thanks" t-name="smartedu_portals.applicant_thanks">
           <t t-call="portal.portal_layout">
             <div>
               <h1>Thanks</h1>

@@ -25,7 +25,7 @@ class MyPortalController(http.Controller):
         user = request.env.user
         information = http.request.env['se.student'].search(
             [('user_id', '=', user.id)], limit=1)
-        return request.render("smartedu_portal.se_student_template", {
+        return request.render("smartedu_portals.se_student_template", {
             'info': information,
         })
 
@@ -34,7 +34,7 @@ class MyPortalController(http.Controller):
         user = request.env.user
         applicant_info = http.request.env['se.application'].search(
             [('user_id', '=', user.id)], limit=1)
-        return request.render("smartedu_portal.se_student_application_list", {
+        return request.render("smartedu_portals.se_student_application_list", {
             'informations': applicant_info,
 
         })
@@ -59,7 +59,7 @@ class MyPortalController(http.Controller):
     #     # Display form on initial GET request
     #        student_info = request.env['se.application'].search(
     #            [('user_id', '=', request.env.user.id)], limit=1)
-    #        return request.render("smartedu_portal.se_student_admission_template", {
+    #        return request.render("smartedu_portals.se_student_admission_template", {
     #            'student_info': student_info,
     #        })
 
@@ -79,7 +79,7 @@ class MyPortalController(http.Controller):
         hsc = request.env['se.education.board'].sudo().search([])
         o_level = request.env['se.education.board'].sudo().search([])
         a_level = request.env['se.education.board'].sudo().search([])
-        return request.render('smartedu_portal.se_student_admission_template', {
+        return request.render('smartedu_portals.se_student_admission_template', {
             # Relational Fields:
 
             "student_info": student_info,
@@ -353,13 +353,13 @@ class MyPortalController(http.Controller):
     #         [('user_id', '=', user_id)], limit=1)
 
     #     request.env['se.application'].sudo().create(kw)
-    #     return request.render("smartedu_portal.applicant_thanks", {})
+    #     return request.render("smartedu_portals.applicant_thanks", {})
 
 # class MyPortalControllerParent(http.Controller):
 
 #     @http.route('/my/admission/online/applications/parent', type='http', auth='user', website=True)
 #     def parent(self, **kw):
-#         return request.render("smartedu_portal.se_parent_template", {})
+#         return request.render("smartedu_portals.se_parent_template", {})
 
 
 class MyPortalControllerParent(http.Controller):
@@ -369,6 +369,6 @@ class MyPortalControllerParent(http.Controller):
         user = request.env.user
         information = http.request.env['se.student'].search(
             [('user_id', '=', user.id)], limit=1)
-        return request.render("smartedu_portal.se_parent_template", {
+        return request.render("smartedu_portals.se_parent_template", {
             'info': information,
         })
