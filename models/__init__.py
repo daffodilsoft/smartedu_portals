@@ -9,4 +9,8 @@ from ...smartedu_core.models import se_semester
 from ...smartedu_core.models import se_semester_type
 from ...smartedu_core.models import se_program
 from ...smartedu_core.models import se_education_board
+from ...smartedu_cartificate_management.models import custody
+from ...smartedu_cartificate_management.models import hr_employee
+from ...smartedu_cartificate_management.models import wizard_reason
+
 from . import res_partner

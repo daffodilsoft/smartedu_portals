@@ -2,39 +2,15 @@
   <data>
     <template id="portal_my_home" name="My POrtal" inherit_id="portal.portal_my_home">
       <xpath expr="//div[contains(@class, &apos;o_portal_my_home&apos;)]" position="before">
-        <!-- <div class="row">
-          <div class="col-md-6 col-xs-6" id="std_dashboard">
-            <div style="box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);" class="card gap-1">
-              <div class="card-body bg-primary">
-                <div class="card-body">
-                  <a href="/my/admission/online/applications/student" class="card-link">Student
-                    Dashboard</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-xs-6" id="parent_dashboard">
-            <div style="box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);" class="card gap-1">
-              <div class="card-body bg-primary">
-                <div class="card-body">
-                  <a href="/my/admission/online/applications/parent" class="card-link">Parent
-                    Dashboard</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
         <div style="box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);" class="card gap-1 text-center">
-              <div class="card-body bg-primary">
-                <div class="card-body">
-                  <!-- <a href="/my/admission/online/applications/student" class="card-link">Student -->
-                  <!-- Dashboard</a> -->
-                  <li><a href="/partner" class="card-link" >Profile</a></li>
-                </div>
-              </div>
+          <div class="card-body bg-primary">
+            <div class="card-body">
+              <li>
+                <a href="/partner" class="card-link">Profile</a>
+              </li>
             </div>
-        <!-- <li><a href="/partner">Profile</a></li> -->
-
+          </div>
+        </div>
       </xpath>
     </template><!-- Student Dashboard-->
     <template id="se_student_template" name="My Student Template">
@@ -182,9 +158,8 @@
             <div class="col-sm-12 col-md-4">
               <div class="card" style="box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);">
                 <div class="card-body">
-                  <h5 class="card-title">Applied
-                    Application List</h5>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <h5 class="card-title">Apply For Cartificate Request</h5>
+                  <a href="/cartificate_req" class="btn btn-primary">Request</a>
                 </div>
               </div>
             </div>
@@ -446,20 +421,7 @@
                             <option value="national" t-att-selected="student_info.curriculum_id == &apos;national&apos;">
                               National</option>
                           </select>
-                        </div><!-- <div class="form-group mb-3">
-                        <label for="curriculum_id">
-                            Curriculumn</label>
-                          <select class="form-control" id="curriculum_id" name="curriculum_id"
-                            t-att-value="student_info.curriculum_id">
-                            <option value="">Choose Curriculum</option>
-                            <option value="british"
-                              t-att-selected="student_info.curriculum_id === 'british'">
-                              British</option>
-                            <option value="national"
-                              t-att-selected="student_info.curriculum_id === 'national'">National</option>
-                          </select>
-
-                        </div> -->
+                        </div>
                         <div class="form-group mb-3">
                           <label for="batch_id">
                             Choose Batch</label>
@@ -1555,23 +1517,6 @@
         <t t-foreach="info" t-as="info"/>
         <div class="container ">
           <div class="row">
-            <!-- <div class="container p-5 align-items-center ">
-              <div class="row  ">
-                <div class="col-sm-12 col-md-12">
-                  <div class="card align-items-center" style="box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);">
-                    <div class=" mt-3 align-items-center">
-                      <form>
-                        <div class="mb-3 ">
-                          <label for="exampleInputOpinion" class="form-label">Please give us your valueable opinion:</label>
-                          <input type="text" class=" ms-1 me-1" id="example"></input>
-                          <button type="submit" class="btn btn-success">Submit</button>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
             <div class="col-md-4 col-sm-12 p-2  ">
               <div style="background: linear-gradient(to bottom, #7f1821ff, #000000); box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);" class="card">
                 <div class="card-header fw-5 text-white">Student  Infromation</div>
@@ -1589,25 +1534,7 @@
                       <div class="col-sm-7">
                         <t t-esc="info.name"/>
                       </div>
-                    </div><!-- <div class="row my-1">
-                      <div class="col-sm-5 fw-bold">Date
-                        of Birth:</div>
-                      <div class="col-sm-7">
-                        <t t-esc="info.birth_date"/>
-                      </div>
-                    </div> --><!-- <div class="row my-1">
-                      <div class="col-sm-5 fw-bold">Blood
-                        Group:</div>
-                      <div class="col-sm-7">
-                        <t t-esc="info.blood_group"/>
-                      </div>
-                    </div> --><!-- <div class="row my-1">
-                      <div class="col-sm-5 fw-bold">
-                        Email:</div>
-                      <div class="col-sm-7">
-                        <t t-esc="info.email"/>
-                      </div>
-                    </div> -->
+                    </div>
                     <div class="row my-1">
                       <div class="col-sm-5 fw-bold">
                         Student ID:</div>
@@ -1621,19 +1548,7 @@
                       <div class="col-sm-7">
                         <t t-esc="info.gender"/>
                       </div>
-                    </div><!-- <div class="row my-1">
-                      <div class="col-sm-5 fw-bold">
-                        Language:</div>
-                      <div class="col-sm-7">
-                        <t t-esc="info.lang"/>
-                      </div>
-                    </div> --><!-- <div class="row my-1">
-                      <div class="col-sm-5 fw-bold">
-                        Mobile:</div>
-                      <div class="col-sm-7">
-                        <t t-esc="info.phone"/>
-                      </div>
-                    </div> -->
+                    </div>
                     <div class="row my-1">
                       <div class="col-sm-5 fw-bold">
                         Attendance:</div>
@@ -1693,47 +1608,7 @@
                         legend: {display: false}
                       }
                     });
-                    </script><!-- <script>
-                window.onload = function() {
-                var ctx = document.getElementById(&apos;myChart&apos;).getContext(&apos;2d&apos;);
-                var chart = new Chart(ctx, {
-                type: &apos;bar&apos;,
-                data: {
-                labels: [&apos;Red&apos;, &apos;Blue&apos;, &apos;Yellow&apos;, &apos;Green&apos;, &apos;Purple&apos;, &apos;Orange&apos;],
-                datasets: [{
-                label: &apos;# of Votes&apos;,
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                &apos;rgba(255, 99, 132, 0.2)&apos;,
-                &apos;rgba(54, 162, 235, 0.2)&apos;,
-                &apos;rgba(255, 206, 86, 0.2)&apos;,
-                &apos;rgba(75, 192, 192, 0.2)&apos;,
-                &apos;rgba(153, 102, 255, 0.2)&apos;,
-                &apos;rgba(255, 159, 64, 0.2)&apos;
-                ],
-                borderColor: [
-                &apos;rgba(255, 99, 132, 1)&apos;,
-                &apos;rgba(54, 162, 235, 1)&apos;,
-                &apos;rgba(255, 206, 86, 1)&apos;,
-                &apos;rgba(75, 192, 192, 1)&apos;,
-                &apos;rgba(153, 102, 255, 1)&apos;,
-                &apos;rgba(255, 159, 64, 1)&apos;
-                ],
-                borderWidth: 1
-                }]
-                },
-                options: {
-                scales: {
-                yAxes: [{
-                ticks: {
-                beginAtZero: true
-                }
-                }]
-                }
-                }
-                });
-                };
-              </script> -->
+                    </script>
             </div>
           </div>
         </div>
@@ -1741,14 +1616,13 @@
           <div class="row  ">
             <div class="col-sm-12 col-md-12">
               <div class="card align-items-center" style="box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);">
-              <div class=" mt-3 align-items-center">
+                <div class=" mt-3 align-items-center">
                   <form>
                     <div class="mb-3 ">
                       <label for="exampleInputOpinion" class="form-label">Please give us your valueable opinion:</label>
                       <input type="text" class=" ms-1 me-1" id="example"></input>
                       <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
-                    
                   </form>
                 </div>
                 <div class="card-body align-items-center">
@@ -1758,6 +1632,45 @@
             </div>
           </div>
         </div>
+      </t>
+    </template><!-- cartificate request form template --><!-- template for submission message -->
+    <template id="req_confirmation" name="Cartificate Record">
+      <t t-call="website.layout">
+        <div class="container">
+          <h1 class="text-center text-primary">
+						Congrats!!! We Have Receved Your Request
+					</h1>
+        </div>
+      </t>
+    </template><!-- post methood for the registration form -->
+    <template id="cartificate_req_form" name="Cartificate Request form">
+      <t t-call="website.layout">
+        <body>
+          <form action="/car" method="post" class="border border-secondary p-4 justify-content-center">
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+            <div class="container justify-content-center">
+              <div class="col justify-content-center">
+                <div class="row mt-5">
+                  <div class="col form-group text-center mt-5">
+                    <label for="date1">Request Date</label>
+                    <input type="date" name="date_request" class="form-control" id="date1"/>
+                  </div>
+                  <div class=" col form-group text-center mt-5">
+                    <label for="date2">Return Date</label>
+                    <input type="date" name="return_date" class="form-control" id="date2"/>
+                  </div>
+                </div>
+                <div class="form-group text-center mt-5">
+                  <label for="text">Reason For collecting the cartificate</label>
+                  <input type="text" name="purpose" id="purpose" class="form-control" placeholder="Write Here"/>
+                </div>
+                <div class="justify-content-center mt-5">
+                  <input type="submit" value="Submit" class="btn btn-danger justify-content-center"/>
+                </div>
+              </div>
+            </div>
+          </form>
+        </body>
       </t>
     </template>
   </data>

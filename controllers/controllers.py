@@ -372,3 +372,35 @@ class MyPortalControllerParent(http.Controller):
         return request.render("smartedu_portals.se_parent_template", {
             'info': information,
         })
+
+class CartificateReg(http.Controller):
+    # Render Form View
+    @http.route('/cartificate_req', auth='public', website=True)
+    def cartificate_info(self, **kw):
+            c_info = request.env['smartedu.cartificate.management'].sudo().search([])
+            
+            return request.render('smartedu_portals.cartificate_req_form', {
+                'c_info': c_info,
+                
+        })
+    
+    # Redirect To  the Page
+    @http.route('/car', auth='public', website=True)
+    def registration_form_redirect(self, **kw):
+        # first_name = kw.get('first_name')
+        purpose = kw.get('purpose')
+        date_request= kw.get('date_request')
+        return_date = kw.get('return_date')
+        
+        
+        
+        request.env['smartedu.cartificate.management'].sudo().create({
+            # 'first_name': first_name,
+            'purpose': purpose,
+            'date_request': date_request,
+            'return_date': return_date,
+            
+            
+        })
+        
+        return request.render('smartedu_portals.req_confirmation')

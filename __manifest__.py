@@ -19,7 +19,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','portal','website','smartedu_core'],
+    'depends': ['base','portal','website','smartedu_core','smartedu_cartificate_management'],
 
     # always loaded
     'data': [
