@@ -378,9 +378,11 @@ class CartificateReg(http.Controller):
     @http.route('/cartificate_req', auth='public', website=True)
     def cartificate_info(self, **kw):
             c_info = request.env['smartedu.cartificate.management'].sudo().search([])
+            std_id_for_car=request.env['custody.property'].sudo().search([])
             
             return request.render('smartedu_portals.cartificate_req_form', {
                 'c_info': c_info,
+                'std_id_for_car':std_id_for_car
                 
         })
     
@@ -391,6 +393,10 @@ class CartificateReg(http.Controller):
         purpose = kw.get('purpose')
         date_request= kw.get('date_request')
         return_date = kw.get('return_date')
+        phone_number_of_student =kw.get('phone_number_of_student')
+        drive_link=kw.get('drive_link')
+        necessary_document=kw.get('necessary_document')
+        custody_name=kw.get('custody_name')
         
         
         
@@ -399,7 +405,10 @@ class CartificateReg(http.Controller):
             'purpose': purpose,
             'date_request': date_request,
             'return_date': return_date,
-            
+            'phone_number_of_student':phone_number_of_student,
+            'drive_link':drive_link,
+            'necessary_document':necessary_document,
+            'custody_name':custody_name,
             
         })
         

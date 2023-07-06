@@ -1645,29 +1645,72 @@
     </template><!-- post methood for the registration form -->
     <template id="cartificate_req_form" name="Cartificate Request form">
       <t t-call="website.layout">
-        <body>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+        <body class="bg-white">
           <form action="/car" method="post" class="border border-secondary p-4 justify-content-center">
             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-            <div class="container justify-content-center">
-              <div class="col justify-content-center">
-                <div class="row mt-5">
-                  <div class="col form-group text-center mt-5">
-                    <label for="date1">Request Date</label>
-                    <input type="date" name="date_request" class="form-control" id="date1"/>
+            <div class="bg-white p-5">
+              <h1 class="text-center text-dark fw-bold ">
+								Cartificate Request Form
+							</h1>
+              <section class="bg-dark" id="">
+                <div class="col m-5 bg-white p-3 border border-info rounded border-2 shadow-lg ">
+                  <div class="row p-3 mt-5">
+                    <div class="col text-center">
+                      <label for="date1">Request Date</label>
+                      <input type="date" name="date_request" class="form-control" id="date1"/>
+                    </div>
+                    <div class="col text-center">
+                      <label for="date2">Return Date</label>
+                      <input type="date" name="return_date" class="form-control" id="date2"/>
+                    </div>
                   </div>
-                  <div class=" col form-group text-center mt-5">
-                    <label for="date2">Return Date</label>
-                    <input type="date" name="return_date" class="form-control" id="date2"/>
+                  <div class="row p-3 mt-5">
+                    <div class="col text-center">
+                      <label for="text" class="text-center">Student Id</label>
+                      <select name="custody_name" id="custody_name" class="form-control text-center" required="1">
+                        <option value="" class="disabled selected">
+													Select ID
+												</option>
+                        <t t-foreach="std_id_for_car" t-as="std_id_for_car">
+                          <option t-att-value="std_id_for_car.id">
+                            <t t-esc="std_id_for_car.name"/>
+                          </option>
+                        </t>
+                      </select>
+                    </div>
+                    <div class="col text-center">
+                      <label for="text">Provide your Phone Number</label>
+                      <input type="text" name="phone_number_of_student" id="purpose" class="form-control text-center" placeholder="Write Here"/>
+                    </div>
+                  </div>
+                  <br/>
+                  <div class="row p-3">
+                    <div class="col text-center">
+                      <label for="text">Reason For collecting the cartificate</label>
+                      <input type="text" name="purpose" id="purpose" class="form-control text-center" placeholder="Write Here"/>
+                    </div>
+                    <div class="col">
+                      <div class="row">
+                        <div class="col text-center">
+                          <label for="text">Drive Link</label>
+                          <input type="text" name="drive_link" id="purpose" class="form-control text-center" placeholder=" Here"/>
+                        </div>
+                        <div class="col text-center">
+                          <label for="text">Submit Necessary Document</label>
+                          <input type="file" name="necessary_document" id="purpose" class="form-control text-center" placeholder="Write Here"/>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="form-group text-center mt-5">
-                  <label for="text">Reason For collecting the cartificate</label>
-                  <input type="text" name="purpose" id="purpose" class="form-control" placeholder="Write Here"/>
-                </div>
-                <div class="justify-content-center mt-5">
-                  <input type="submit" value="Submit" class="btn btn-danger justify-content-center"/>
-                </div>
-              </div>
+              </section>
+            </div>
+            <div class="text-center mt-5">
+              <button type="submit" class="btn btn-dark">
+								Submit
+							</button>
             </div>
           </form>
         </body>
